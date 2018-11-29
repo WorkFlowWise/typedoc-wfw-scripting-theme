@@ -44,13 +44,13 @@
 		<script>if (location.protocol == 'file:') document.write('<script src="{{relativeURL "assets/js/search.js"}}"><' + '/script>');</script>
 		<script>
 			Array.from(document.getElementsByClassName('tsd-description')).forEach(description => {
-				let pre = description.getElementsByTagName('pre').item(0);
-				if (pre) {
+				let pres = Array.from(description.getElementsByTagName('pre'));
+				pres.forEach(pre => {
 					if (pre.previousElementSibling && pre.previousElementSibling.tagName.toLowerCase() === 'p') {
 						pre.className = 'content';
 						pre.previousElementSibling.className = 'collapsible';
 					}
-				}
+				});
 			});
 
 			var coll = document.getElementsByClassName("collapsible");
